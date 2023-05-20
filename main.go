@@ -14,16 +14,22 @@ func main() {
 
 	// as the function returns two variables, then we can define two variables
 	f, err := os.Open(problemsFilename)
-
 	// in go we should handle the error in each functio, as there is no throw try/catch checkes in Go, if we didn't handle this then a panic will happen
 	// and may cos the program to stop.
 	if err != nil {
 		fmt.Printf("failed to open the file %s", err)
 		return
 	}
-	r := csv.NewReader()
+	// to make sure after we finish dealing with the file we close the file, and release it back to the IO system, also useful when error happen as it will also run if an error happen
+	defer f.Close()
+	r = csv.NewReader(f)
 
-	fmt.Println(r)
+	records, err := r.ReadAll()
+	if err != nil {
+		fmt.Printf("failed to read the file %v", err)
+		return
+	}
+	// fmt.Println(r)
 
 	// to explain.
 	// myR := myReader{}
