@@ -22,14 +22,14 @@ func main() {
 	}
 	// to make sure after we finish dealing with the file we close the file, and release it back to the IO system, also useful when error happen as it will also run if an error happen
 	defer f.Close()
-	r = csv.NewReader(f)
+	r := csv.NewReader(f)
 
 	records, err := r.ReadAll()
 	if err != nil {
 		fmt.Printf("failed to read the file %v", err)
 		return
 	}
-	// fmt.Println(r)
+	fmt.Println(records)
 
 	// to explain.
 	// myR := myReader{}
@@ -37,6 +37,17 @@ func main() {
 	// r := csv.NewReader(myR)
 
 	// fmt.Println(r)
+
+	// To iterate over a loop in Go
+	for i, record := range records {
+		// define more than one variable in the same line
+		question, _ := record[0], record[1]
+		fmt.Println("%d. %s?\n", i+1, question)
+		//to pass value with pointer (reference), we use the &
+		var answer string
+		fmt.Scan(&answer)
+	}
+
 }
 
 // define a class in Go
