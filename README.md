@@ -60,3 +60,15 @@ f, err := os.Open(problemsFilename)
 	defer f.Close()
 
 ```
+
+```Char``` type in Go ==> ```rune```
+
+
+another type use for If 
+
+```
+	if length := getLength(email); length < 1{
+		fmt.Printf("it is one")
+	}
+
+```
