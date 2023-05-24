@@ -1,4 +1,4 @@
-# GOLang
+# GO
 
 To pass Value by reference in Go, use ```&``` operator 
 ``` 
@@ -72,3 +72,49 @@ another type use for If
 	}
 
 ```
+
+how variables is being stored in memory in GO => in go variables are being passed by value not by reference
+![image](https://github.com/mohamedalaa1197/GOLang/assets/62913078/b776b53a-ab61-45df-aa77-1f9e29659b77)
+
+To solve this issue 
+![image](https://github.com/mohamedalaa1197/GOLang/assets/62913078/5af41c40-e21d-4e58-b614-00bb9914bd09)
+
+Functions in Go can have multiple return values => and in this point the seginature will be like this 
+
+```
+func getNames() (string, string)
+{
+	return "Mohamed", "Alaa"
+}
+```
+
+in Go => when we don't do return in the function, it returns the default values for the variables based on its type => 
+
+	```
+		func getCordinates () (x,y int) // by doing this we gave a default values for x and y 
+		{
+			return // By doing this we return the x and y (even without writing them)
+		}
+	```	
+it is equal to this function 
+
+	```
+		function getCordinates () (int, int){
+			var x int
+			var y int 
+			return x, y
+		}
+	```
+
+
+Early Return in Go => this happens when there is an error, and we want to return when this error happen (guard clauses)
+
+	```
+		func divide (dividened, divisor int) (int, error){
+			if divisor == 0 {
+				return 0, errors.New("Can't divide by zero")
+			}
+			return dividened/divisor,nil;
+		}
+	```
+
