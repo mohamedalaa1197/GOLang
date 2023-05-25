@@ -98,6 +98,7 @@ in Go => when we don't do return in the function, it returns the default values 
 	```	
 it is equal to this function 
 
+
 	```
 		function getCordinates () (int, int){
 			var x int
