@@ -193,3 +193,22 @@ Early Return in Go => this happens when there is an error, and we want to return
 		}
 	```
 
+To return an error from a function ==> 
+Error is noting than an interface that contains a method that returns a string
+```go
+ fmt.Errorf("error message");
+```
+
+we can define a global error message =>
+```go
+type userError struct{
+	name string
+}
+
+// the userError Implements the Error Interface.
+func (e userError) Error() string{
+	// Sprintf => used to format the string
+	return fmt.Sprintf("%v has a problem with their account",e.name)
+}
+```
+
