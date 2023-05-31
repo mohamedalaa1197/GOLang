@@ -12,6 +12,17 @@ const problemsFilename = "problems.csv"
 
 func main() {
 
+	//const name = "Saul Goodman"
+	//const openRate = 30.5
+	//const msg = "Hi %v , your open rate is %v percent", name, openRate
+
+	accountAge := 2.6
+	// create a new "accountAgeInt" here
+	var accountAgeInt int
+	// it should be the result of casting "accountAge" to an integer
+	accountAgeInt = int(accountAge)
+	fmt.Println("Your account has existed for", accountAgeInt, "years")
+
 	// as the function returns two variables, then we can define two variables
 	f, err := os.Open(problemsFilename)
 	// in go we should handle the error in each functio, as there is no throw try/catch checkes in Go, if we didn't handle this then a panic will happen

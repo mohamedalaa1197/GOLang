@@ -60,6 +60,7 @@ f, err := os.Open(problemsFilename)
 	defer f.Close()
 
 ```
+
 # Interfaces
 In Go => it is just a collection of message interfaces, interfaces in Go are being implemented 
 Imbecility , which mean, if u have an interface which has functions in it, and function that matches these interface  \
@@ -211,4 +212,88 @@ func (e userError) Error() string{
 	return fmt.Sprintf("%v has a problem with their account",e.name)
 }
 ```
+
+For Loop in Go => 
+```go
+for initial ;condition ;increase{
+	//Some code
+}
+for i:= 0;i < 100;i++{
+	
+}
+```
+
+
+******We don't have while loops in Go, we just have the for loop.
+doing the same behaviour as while****** 
+```go
+plantHeight := 1;
+
+// as long as the condition is true, the for loop will keep executing.
+for plantHeight < 5{
+	// do something.
+}
+```
+To define an array in int
+
+```go
+var myInts [10]int ==> // it is also fixed size as C#
+
+primes := [6]int{1,2,3,4,5,6} 
+
+```
+
+Slice is just unlimited array size, **it is a reference types**
+```go
+ var myMessages = [3] string{"Mohamed","Alaa","Saad"}
+ 
+ mySlice := myMessages[0:2] 
+ // mySlice => {"Mohamed","Alaa"}
+```
+Take values form array to Slice 
+![img.png](img.png)
+
+AS slices are stored in a contiguous store in memory, 
+when we increase the size of the slice we copy all the data from one place to another 
+that fit the new addition
+![img_1.png](img_1.png)
+
+To create a slice, without having an array at the beginning => 
+
+```go
+//func make ([]T, len, cap)
+// Capacity is the array Length we have under the hood
+mySlice := make([]int,5,10)
+
+// we can ignore the capacity input 
+mySlice := make([]int,5)
+
+// u can initialize the slice with values 
+
+mySlice := []string {"I","love","Go"} ==> we created it with a 3 items
+
+// To return the length of a slice 
+len(myslice) ==> will return the length 
+```
+
+**Variadic functions**, the difference will be in the caller itself
+
+![img_2.png](img_2.png)
+
+**Spread operator**,  
+![img_3.png](img_3.png)
+
+
+**Append**, To add new thing to the end of the Slice, we use the append function
+![img_4.png](img_4.png)
+
+![img_5.png](img_5.png)
+
+**how to iterate on a slice** 
+![img_6.png](img_6.png)
+
+
+**Dictionaries == maps in GO**
+![img_7.png](img_7.png)
+
 
