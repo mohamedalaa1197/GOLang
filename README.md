@@ -297,3 +297,6 @@ len(myslice) ==> will return the length
 ![img_7.png](img_7.png)
 
 
+Go routines 
+Go channels
+
